@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Shubham20002/Issue_Tracker#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs": "^2.0.0"
   }
 }
