@@ -18,7 +18,7 @@ module.exports.createissue= async function(req,res){
             
             project.issues.push(issue);
             project.save();
-        return res.redirect('back');
+        return res.redirect('/back');
         }catch{
             return res.redirect('back');
             

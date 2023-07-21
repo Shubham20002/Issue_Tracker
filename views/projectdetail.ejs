@@ -15,3 +15,20 @@
     </div>
     
   </div>
+ 
+  <% for(i of projectinfo.issues){%>
+    <div class="row ">
+        <div class="col-sm-8 w-75 mx-auto text-center">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%=i.title%></h5>
+              <p class="card-text"><%=i.description%></p>
+              <p class="card-text"><%=i.author%></p>
+              <p class="card-text"><%=i.lable%></p>
+             
+            </div>
+          </div>
+        </div>
+        
+      </div>
+<%}%>
