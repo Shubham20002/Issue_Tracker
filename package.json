@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Shubham20002/Issue_Tracker/issues"
   },
-  "homepage": "https://github.com/Shubham20002/Issue_Tracker#readme"
+  "homepage": "https://github.com/Shubham20002/Issue_Tracker#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
