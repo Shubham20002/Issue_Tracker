@@ -16,3 +16,11 @@ module.exports.createproject= async function(req,res){
     }
    
 }
+
+module.exports.pd= async function(req,res){
+    
+    const project=await Project.findById(req.params.id);
+    return res.render('projectdetail',{
+        projectinfo:project
+    })
+}
