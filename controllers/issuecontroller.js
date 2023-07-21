@@ -9,12 +9,20 @@ module.exports.issueform=function(req,res){
     })
 }
 module.exports.createissue= async function(req,res){
+    const project= await Project.findById(req.body.project);
     
-    try{
-        const issue= await Issue.create(req.body);
-    return res.redirect('back');
-    }catch{
+    if(project){
+        try{
+            
+            const issue= await Issue.create(req.body);
+            
+            project.issues.push(issue);
+            project.save();
         return res.redirect('back');
-        
+        }catch{
+            return res.redirect('back');
+            
+        }
     }
+    
 }
