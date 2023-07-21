@@ -1,0 +1,19 @@
+{
+  "name": "issuet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shubham20002/Issue_Tracker.git"
+  },
+  "author": "Shubham_Patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shubham20002/Issue_Tracker/issues"
+  },
+  "homepage": "https://github.com/Shubham20002/Issue_Tracker#readme"
+}
