@@ -30,6 +30,7 @@ module.exports.deleteproject=async function(req,res){
   
 
 await Project.deleteOne({ _id: req.params.id });
+// Issue.deleteMany(project:req.params.id)
   return res.redirect('back');
 
 }

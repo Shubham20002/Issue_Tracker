@@ -15,14 +15,22 @@ module.exports.createissue= async function(req,res){
         try{
             
             const issue= await Issue.create(req.body);
-            
             project.issues.push(issue);
             project.save();
-        return res.redirect('/back');
+        return res.redirect('back');
         }catch{
             return res.redirect('back');
             
         }
     }
     
+}
+
+module.exports.deleteissue= async function(req,res){
+    const issue=await Issue.findById(req.params.id);
+    const issueid=issue.project;
+    await Issue.deleteOne({ _id: req.params.id });
+    // Project.findByIdAndUpdate(issueid,{$pull:{issues:req.params.id}})
+    return res.redirect('back');
+
 }
