@@ -13,11 +13,12 @@ module.exports.createissue= async function(req,res){
     
     if(project){
         try{
-            
+            // console.log(req.body)
             const issue= await Issue.create(req.body);
+            const issueid=issue.project;
             project.issues.push(issue);
             project.save();
-        return res.redirect('back');
+        return res.redirect(`/project/pd/${issueid}`);
         }catch{
             return res.redirect('back');
             
@@ -27,10 +28,13 @@ module.exports.createissue= async function(req,res){
 }
 
 module.exports.deleteissue= async function(req,res){
+    
     const issue=await Issue.findById(req.params.id);
-    const issueid=issue.project;
+    const projectid=issue.project;
     await Issue.deleteOne({ _id: req.params.id });
-    // Project.findByIdAndUpdate(issueid,{$pull:{issues:req.params.id}})
-    return res.redirect('back');
-
+   const del= await Project.findByIdAndUpdate(projectid,{$pull:{issues:req.params.id}});
+   console.log(del);
+   
+    // console.log(`/project/pd/${issueid}`);
+    return res.redirect(`/project/pd/${projectid}`);
 }

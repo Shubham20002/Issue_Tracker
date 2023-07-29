@@ -5,6 +5,8 @@ const projectcontroller=require('../controllers/projectcontroller');
 router.get('/createproject',projectcontroller.projectform);
 router.post('/addproject',projectcontroller.createproject);
 router.get('/pd/:id',projectcontroller.pd);
+
 router.get('/deleteproject/:id',projectcontroller.deleteproject)
+router.post('/issuebylabel',projectcontroller.issuebylable);
 
 module.exports=router;

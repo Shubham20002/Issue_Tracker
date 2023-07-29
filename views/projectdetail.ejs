@@ -3,29 +3,47 @@
 <!-- <%=projectinfo%> -->
 
 <div class="row ">
-    <div class="col-sm-8 w-75 mx-auto text-center">
-      <div class="card">
+    <div class="col-sm-8 w-75 mx-auto text-center my-5 ">
+      <div class="card bg-dark">
         <div class="card-body">
-          <h5 class="card-title"><%=projectinfo.name%></h5>
-          <p class="card-text"><%=projectinfo.description%></p>
-          <p class="card-text"><%=projectinfo.author%></p>
+          <h5 class="card-title fw-bolder text-white">Project Name: <%=projectinfo.name%></h5>
+          <p class="card-text fw-bolder text-white">Project Description: <%=projectinfo.description%></p>
+          <p class="card-text text-danger">Project Author: <%=projectinfo.author%></p>
           <a href="/issue/createissue/<%=projectinfo.id%>" class="btn btn-primary">Create Issue</a>
         </div>
       </div>
     </div>
     
   </div>
+
+  <!-- searchin isue by label -->
+
+  <form action="/project/issuebylabel" method="post">
+    <div class="col-sm-8 w-75 mx-auto text-center my-2">
+    <div >
+        <input type="hidden" name="project" value="<%=projectinfo.id%>">
+        <label for="label" class="form-label my-1">Search project by label</label>
+        <br>
+        <select name="label" id="label" class="w-50">
+            <option value="prod">Prod</option>
+            <option value="qa">qa</option>
+          </select>
+    </div>
+    <button type="submit" class="btn btn-primary my-1">Submit</button>
+</div>
+  </form>
  
+  <!-- rendering all issue -->
   <% for(i of projectinfo.issues){%>
     <div class="row ">
         <div class="col-sm-8 w-75 mx-auto text-center">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><%=i.title%></h5>
-              <p class="card-text"><%=i.description%></p>
-              <p class="card-text"><%=i.author%></p>
-              <p class="card-text"><%=i.lable%></p>
-              <a href="/issue/deleteissue/<%=i.id%>" class="btn btn-primary">Delete Issue</a>
+          <div class="card ">
+            <div class="card-body ">
+              <h5 class="card-title">Issue Title: <%=i.title%></h5>
+              <p class="card-text">Discription: <%=i.description%></p>
+              <p class="card-text">Author: <%=i.author%></p>
+              <p class="card-text">Label: <%=i.label%></p>
+              <a href="/issue/deleteissue/<%=i.id%>" class="btn btn-danger">Delete Issue</a>
             </div>
           </div>
         </div>
