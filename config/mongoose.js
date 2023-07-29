@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
+const env=require('./environment');
 
-mongoose.connect('mongodb://localhost/Issue_Tracker');
+mongoose.connect(`${env.db}`);
 
 const db=mongoose.connection;
 
