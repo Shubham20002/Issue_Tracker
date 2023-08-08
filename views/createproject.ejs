@@ -1,23 +1,26 @@
-<div class="container my-5  ">
+<div class="container my-5 col-sm-6  ">
     <form action="/project/addproject" method="post">
         <div style="text-align: center;">
-            <h1 >Add New Project</h1></div>
+            <h1 class="fw-bolder">Add New Project</h1></div>
         
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Project Name</label>
+          <label for="exampleInputEmail1" class="form-label fw-bolder" >Project Name</label>
           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
           
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">description</label>
+          <label for="exampleInputPassword1" class="form-label fw-bolder">Description</label>
           <input type="text" class="form-control" id="exampleInputPassword1" name="description">
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Author</label>
+            <label for="exampleInputPassword1" class="form-label fw-bolder">Author</label>
             <input type="text" class="form-control" id="exampleInputPassword1" name="author">
           </div>
         
-        <button type="submit" class="btn btn-primary">Add Project</button>
+          
+            <button type="submit" class="btn btn-primary w-100 ">Add Project</button>
+         
+       
       </form>
 </div>
