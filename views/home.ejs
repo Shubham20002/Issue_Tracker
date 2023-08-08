@@ -16,11 +16,11 @@
         <div class="col-sm-8 w-75 mx-auto text-center">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"><%=p.name%></h5>
-              <p class="card-text"><%=p.description%></p>
-              <p class="card-text"><%=p.author%></p>
+              <h5 class="card-title"><h5 class="fw-bolder text-primary">Project Name:</h5> <%=p.name%></h5>
+              <p class="card-text"><h5 class="fw-bolder text-primary">Project Description:</h5> <%=p.description%></p>
+              <p class="card-text"><h5 class="fw-bolder text-primary">Project Author:</h5> <%=p.author%></p>
               <a href="/project/pd/<%=p.id%>" class="btn btn-primary">Go To Project</a>
-              <a href="/project/deleteproject/<%=p.id%>" class="btn btn-denger">Delete Project</a>
+              <a href="/project/deleteproject/<%=p.id%>" class="btn btn-danger my-2">Delete Project</a>
             </div>
           </div>
         </div>
